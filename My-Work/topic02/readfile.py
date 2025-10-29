@@ -3,20 +3,19 @@
 
 
 FILENAME="numbers.txt"
-DATADIR= "../../data/"
+DATADIR= "../data/"
 FULLPATH =  DATADIR + FILENAME
 
 #print (FULLPATH)
 
 with open (FULLPATH, "rt") as fp:
-    total = 0
     for line in fp:
-        #print (f" {line.strip()} ", end="")
-        #print( f"has lenght {len(line)}")
-        total += int(line)
-    print (total)
 
-
+        # use strip to remove whitespace
+        # https://www.freecodecamp.org/news/python-strip-how-to-trim-a-string-or-line/
+        print (f" {line.strip()} ", end="")
+        print( f"has lenght {len(line)}")
+      
 
 
 
