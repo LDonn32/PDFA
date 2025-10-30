@@ -14,11 +14,11 @@ df= pd.read_csv(datadir+filename)
 print(df.isnull().sum())
 
 # Drop rows with missing values
-#df.dropna(inplace=True)
+df.dropna(inplace=True)
 
 # Fill missing values
 df.fillna(value='default_value', inplace=True)
 
 # drop duplicate rows
-df.drop_duplicates(inplace=True)
+# df.drop_duplicates(inplace=True)
 df.to_csv( "temp_file.csv")
