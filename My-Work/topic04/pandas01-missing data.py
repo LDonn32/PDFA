@@ -1,6 +1,7 @@
 # code snippets for lectures
 # Author: Laura Donnelly
 
+
 import pandas as pd
 # up two levels past topic04 and then down into data
 datadir = "../data/"
