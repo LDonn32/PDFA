@@ -4,11 +4,11 @@
 
 import pandas as pd
 # up two levels past topic04 and then down into data
-datadir = "../data/"
-filename="people-100-dirty.csv"
+DATADIR = "../../data/"
+FILENAME="people-100-dirty.csv"
 
 
-df= pd.read_csv(datadir+filename)
+df= pd.read_csv(DATADIR + FILENAME)
 
 # Detect missing values
 print(df.isnull().sum())
