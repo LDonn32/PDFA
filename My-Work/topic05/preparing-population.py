@@ -6,7 +6,7 @@
 import pandas as pd 
 
 FILENAME="cso-populationbyage.csv"
-DATADIR= r"C:\Users\laura\Documents\Github\PDFA\My-Work\topic04\data\\"
+DATADIR= r"C:/Users/laura/Documents/GitHub/PDFA/My-Work/data/"
 FULLPATH =  DATADIR + FILENAME
 
 df = pd.read_csv(FULLPATH)
