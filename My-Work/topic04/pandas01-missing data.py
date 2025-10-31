@@ -4,8 +4,21 @@
 
 import pandas as pd
 # up two levels past topic04 and then down into data
-DATADIR = "../../data/"
-FILENAME="people-100-dirty.csv"
+
+# was having issues with relative paths, so added this to check current working directory.
+
+'''
+import os
+print("Current working directory:", os.getcwd())
+
+# this was code from lecture, but it wasn't working for me (despite same file path working in other files), so I hard coded the path below.
+FILENAME= "people-100-dirty.csv"
+DATADIR= "../Data/"
+
+'''
+
+FILENAME= "people-100-dirty.csv"
+DATADIR = r"C:\Users\laura\Documents\Github\PDFA\My-Work\Data\\"
 
 
 df= pd.read_csv(DATADIR + FILENAME)
