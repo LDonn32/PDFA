@@ -1,9 +1,22 @@
 # Programming for Data Analytics Assignments
 
+# Contact Information
+
 Author: Laura Donnelly
+
 Student Number: G00472977
 
+Email: G00472977@atu.ie
+
+
 This folder contains the assignments laid out in the module Programming for Data Analytics at ATU.
+
+
+
+
+
+
+# Assignment List:
 
 
 ## Assignment 2: Northern bank holdays
@@ -88,3 +101,17 @@ The max windspeed for each day
 The monthly mean of the daily max windspeeds (yer I am being nasty here) 
 
 You do not need to over comment your code. Marks will be given for how nice the plots are.
+
+
+
+
+
+# Rescources:
+
+Useful template for creating this ReadMe file- (Github Best ReadMe Template)[https://github.com/othneildrew/Best-README-Template/blob/main/README.md]
+
+Useful to help format and use correct syntax for the ReadMe File, particularly for quoting code or references - Githubdocs
+
+Useful introduction to Python - Python.org
+
+Python CheatSheet (2025) - Geeksforgeeks.org
