@@ -12,6 +12,48 @@ Email: G00472977@atu.ie
 This folder contains the assignments laid out in the module Programming for Data Analytics at ATU.
 
 
+This ReadMe file for the 2025 Programming and Scripting Module for the H. Dip in Science in Data Analytics, ATU will do the following:
+
+* Give a description for each of the assigned weekly tasks.
+  
+* Show how to clone the repositpry
+  
+* State what technologies and libraries were used.
+
+* Includes references and additional resources used.
+
+
+# Technologies
+
+## This section covers what tools were used: 
+
+
+[Git](https://git-scm.com/downloads)
+
+[GitHub](https://github.com/)
+
+[VSCode](https://code.visualstudio.com/)
+
+
+# Libraries/Modules used 
+
+[Datetime](https://docs.python.org/3/library/datetime.html)
+
+[Matplotlib](https://matplotlib.org/stable/)
+
+[Numpy](https://numpy.org/doc/stable/index.html)
+
+
+
+
+# Installation/ how to run
+
+Clone the repository:
+
+```
+git clone https://github.com/LDonn32/PDFA.git
+
+```
 
 
 
@@ -108,10 +150,15 @@ You do not need to over comment your code. Marks will be given for how nice the 
 
 # Rescources:
 
-Useful template for creating this ReadMe file- (Github Best ReadMe Template)[https://github.com/othneildrew/Best-README-Template/blob/main/README.md]
 
-Useful to help format and use correct syntax for the ReadMe File, particularly for quoting code or references - Githubdocs
+Useful template for creating this ReadMe file- [Github Best ReadMe Template](https://github.com/othneildrew/Best-README-Template/blob/main/README.md)
 
-Useful introduction to Python - Python.org
+Useful to help format and use correct syntax for the ReadMe File, particularly for quoting code or references - [Githubdocs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
-Python CheatSheet (2025) - Geeksforgeeks.org
+Useful introduction to Python - [Python.org](https://docs.python.org/3/tutorial/introduction.html#)
+
+Python CheatSheet (2025) - [Geeksforgeeks.org](https://www.geeksforgeeks.org/python-cheat-sheet/)
+
+
+
+
