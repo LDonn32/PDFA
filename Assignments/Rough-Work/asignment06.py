@@ -6,7 +6,7 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import matplotlib.dates as mdates # maybe not use this 
+import matplotlib.dates as mdates # maybe not use this will see
 
 sns.set(style="whitegrid") # causing error go back to plt plot maybe
 
@@ -77,36 +77,36 @@ plt.show()
 
 # Second Part on Windspeed the last 40%
 
-# Identify windspeed column
-possible_wind_cols = [c for c in df.columns if c.lower() in (
-    'wind','windsp','windspeed','windspd','ff','spd','wind_speed','ws','wind speed')]
-
-if not possible_wind_cols:
-    # if none found by exact matches, do a fuzzy-ish search
-    possible_wind_cols = [c for c in df.columns if 'wind' in c.lower() or 'spd' in c.lower()]
-
-if not possible_wind_cols:
-    raise ValueError('No windspeed-like column found. Columns present: ' + ','.join(df.columns))
-
-wcol = possible_wind_cols[0]
-print('\nUsing windspeed column:', wcol)
-
-# Convert to numeric (coerce non-numeric to NaN)
-df[wcol] = pd.to_numeric(df[wcol], errors='coerce')
-
-# Plot raw windspeed (hourly)
-plt.figure(figsize=(14,5))
-ax = sns.lineplot(x=df.index, y=df[wcol])
-ax.set_title(f'Hourly {wcol} (raw, missing values visible)')
-ax.set_xlabel('Date')
-ax.set_ylabel(f'{wcol} (units as in file)')
-ax.xaxis.set_major_locator(mdates.AutoDateLocator())
-ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(mdates.AutoDateLocator()))
-plt.tight_layout()
-plt.show()
 
 
-# code not working hewre need to trouble shoot
+
+# Plot raw windspeed 
+
+
+# figure out which column is the windspeed column.
+
+wind_candidates = ['wdsp', 'windspeed', 'windspd', 'wind_spd', 'wind', 'ff']
+
+wcol = None
+for c in df.columns:
+    if c.lower() in wind_candidates or any(k in c.lower() for k in ['wind', 'spd', 'ff']):
+        wcol = c
+        break
+
+if wcol is None:
+    raise ValueError("No windspeed-like column found.")
+
+print("Using windspeed column:", wcol)
+
+# Convert to numeric (handle commas, coercing errors to NaN)
+df[wcol] = pd.to_numeric(df[wcol].astype(str).str.replace(',', '.', regex=False),
+                         errors='coerce')
+
+
+
+
+
+# code not working hewre need to trouble shoot .... too messy on the plots find way to make labels neater.
 
 
 # Rolling windspeed (24-hour rolling average)
