@@ -10,6 +10,8 @@ import matplotlib.dates as mdates # maybe not use this will see
 
 sns.set(style="whitegrid") # causing error go back to plt plot maybe
 
+
+
 #  Load data 
 url = "https://cli.fusio.net/cli/climate_data/webdata/hly4935.csv"
 # skip the metadata at the top
@@ -44,6 +46,10 @@ ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(mdates.AutoDateLocator(
 plt.tight_layout()
 plt.show()
 
+
+
+
+'''
 #  Daily mean temperature
 daily_mean = df['temp'].resample('D').mean()
 print('\nDaily mean sample:')
@@ -59,6 +65,22 @@ ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(mdates.AutoDateLocator(
 plt.tight_layout()
 plt.show()
 
+'''
+
+# Plot the daily mean.
+
+plt.figure(figsize=(18,6))
+
+# daily_mean is a DataFrame with 'date' and 'temp' columns
+sns.lineplot(data=daily_mean, x='date', y='temp',)
+plt.title('Daily Mean Temperature')
+plt.xlabel("Date")
+plt.ylabel("Mean Temperature (°C)")
+plt.show()
+
+
+'''
+
 #  Monthly mean temperature
 monthly_mean = df['temp'].resample('M').mean()
 print('\nMonthly mean sample:')
@@ -73,38 +95,48 @@ ax.xaxis.set_major_locator(mdates.MonthLocator(interval=1))
 ax.xaxis.set_major_formatter(mdates.ConciseDateFormatter(mdates.AutoDateLocator()))
 plt.tight_layout()
 plt.show()
+'''
+
+# Compute monthly mean temperature.
+
+monthly_mean = (df.set_index('date').resample('M')['temp'].mean().reset_index())
+
+# Take a look at the monthly mean before plotting.
+print(monthly_mean)
+
+
+# Plot the monthly mean. 
+plt.figure(figsize=(14,5))
+sns.lineplot(x=monthly_mean['date'], y=monthly_mean['temp'], marker='o')
+plt.title('Monthly Mean Temperature')
+plt.xlabel("Month")
+plt.ylabel("Monthly Mean Temperature (°C)")
+plt.tight_layout()
+plt.show()
+
+
 
 
 # Second Part on Windspeed the last 40%
 
+# Print all column names to find which one reflects windspeed
+print("Columns in the dataset:")
+print(df.columns)
 
-
-
-# Plot raw windspeed 
-
-
-# figure out which column is the windspeed column.
-
-wind_candidates = ['wdsp', 'windspeed', 'windspd', 'wind_spd', 'wind', 'ff']
-
-wcol = None
-for c in df.columns:
-    if c.lower() in wind_candidates or any(k in c.lower() for k in ['wind', 'spd', 'ff']):
-        wcol = c
-        break
-
-if wcol is None:
-    raise ValueError("No windspeed-like column found.")
+# After checking the columns outputted, manually set the windspeed column name.
+wcol = 'wdsp'   
 
 print("Using windspeed column:", wcol)
 
-# Convert to numeric (handle commas, coercing errors to NaN)
-df[wcol] = pd.to_numeric(df[wcol].astype(str).str.replace(',', '.', regex=False),
-                         errors='coerce')
+# Convert windspeed column to numeric.
+# see: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html 
+df[wcol] = pd.to_numeric(
+    df[wcol].astype(str).str.replace(',', '.', regex=False), # replace commas with dots
+    errors='coerce'
+)
 
 
-
-
+# Plot raw windspeed 
 
 # code not working hewre need to trouble shoot .... too messy on the plots find way to make labels neater.
 
