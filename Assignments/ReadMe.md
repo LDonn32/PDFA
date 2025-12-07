@@ -43,7 +43,9 @@ This ReadMe file for the 2025 Programming and Scripting Module for the H. Dip in
 
 [Numpy](https://numpy.org/doc/stable/index.html)
 
+[Pandas](https://pandas.pydata.org/docs/index.html#)
 
+[Seaborn](https://seaborn.pydata.org/index.html)
 
 
 # Installation/ how to run
@@ -152,8 +154,6 @@ You do not need to over comment your code. Marks will be given for how nice the 
 
 
 Useful template for creating this ReadMe file- [Github Best ReadMe Template](https://github.com/othneildrew/Best-README-Template/blob/main/README.md)
-
-Useful to help format and use correct syntax for the ReadMe File, particularly for quoting code or references - [Githubdocs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 Useful introduction to Python - [Python.org](https://docs.python.org/3/tutorial/introduction.html#)
 
