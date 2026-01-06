@@ -57,4 +57,11 @@ git clone https://github.com/LDonn32/PDFA.git
 ```
 
 
+Acquiring CSV File
+
+
+Link to where i downlaoded ---- https://www.met.ie/climate/available-data/historical-data
+
+down load CVS file of airports, saves as CSV excel file. Need to  Sve as MS- DOS * CSV FILE Upload to github and use pd read csv to read in data.
+
 
