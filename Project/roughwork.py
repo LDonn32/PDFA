@@ -4,7 +4,7 @@ import numpy as np
 import seaborn as sns
 
 
-####----Aquiring the Data ----#### ######
+
 
 # Load the Shannon airport dataset.
 
@@ -25,7 +25,6 @@ knock = pd.read_csv("data/dly4935.csv", parse_dates=["date"], index_col='date', 
 
 
 
-#---- cleaning data---###----#######
 
 
 
