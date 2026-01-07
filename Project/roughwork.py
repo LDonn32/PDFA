@@ -3,27 +3,43 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
-# Maybe use these later
-from statsmodels.tsa.seasonal import seasonal_decompose
-from pandas.plotting import register_matplotlib_converters
-register_matplotlib_converters()
-from statsmodels.tsa.arima.model import ARIMA
+
+####----Aquiring the Data ----#### ######
+
+# Load the Shannon airport dataset.
+
+shannon = pd.read_csv("data/dly518.csv", parse_dates=["date"], index_col='date', skiprows=24,low_memory=False, date_format='%d-%b-%Y %H:%M')
+
+# load the Dublin airport dataset.
+
+dublin = pd.read_csv("data/dly532.csv", parse_dates=["date"], index_col='date', skiprows=25, low_memory=False, date_format='%d-%b-%Y %H:%M')
+
+# Load the Cork airport dataset.
+
+cork = pd.read_csv("data/dly3904.csv", parse_dates=["date"], index_col='date', skiprows=24,low_memory=False, date_format='%d-%b-%Y %H:%M')
+
+
+# Load the Knock airport dataset.
+
+knock = pd.read_csv("data/dly4935.csv", parse_dates=["date"], index_col='date', skiprows=24, low_memory=False, date_format='%d-%b-%Y %H:%M')
 
 
 
-# Load datasets.
-
-df = pd.read_csv("dly532.csv")
-
-# check
-
-df.head(15)
+#---- cleaning data---###----#######
 
 
-# clean data and load again in df.
-df=pd.read_csv("dly532.csv", skiprows=25, parse_dates=['date'], dayfirst=True, low_memory=False)
 
-# check
-df.head(5)
+
+# Load the Knock airport dataset.
+
+# See: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html
+
+shannon.replace(to_replace=' ', value=np.nan, inplace=True)
+
+# Check.
+
+ # shannon.head()
+
+dublin.replace(to_replace=' ', value=np.nan, inplace=True)
 
 
