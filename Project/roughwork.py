@@ -25,20 +25,26 @@ knock = pd.read_csv("data/dly4935.csv", parse_dates=["date"], index_col='date', 
 
 
 
-
-
-
-
-# Load the Knock airport dataset.
-
+# Replace blank spaces with NaN values.
 # See: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.replace.html
 
 shannon.replace(to_replace=' ', value=np.nan, inplace=True)
 
 # Check.
 
- # shannon.head()
+# shannon.head()
 
 dublin.replace(to_replace=' ', value=np.nan, inplace=True)
+# dublin.head()
+
+cork.replace(to_replace=' ', value=np.nan, inplace=True)
+# cork.head() 
+
+knock.replace(to_replace=' ', value=np.nan, inplace=True)
+# knock.head()
+
+
+
+
 
 
