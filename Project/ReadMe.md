@@ -27,25 +27,40 @@ This ReadMe file for the 2025 Programming and Scripting Mo
 
 ## This section covers what tools were used: 
 
+[Python](https://docs.python.org/3/)
 
-[Git](https://git-scm.com/downloads)
+[Pandas](https://pandas.pydata.org/docs/)
+
+[Matplotlib](https://matplotlib.org/stable/)
+
+[NumPy](https://numpy.org/doc/stable/index.html)
+
+[Seaborn](https://seaborn.pydata.org/)
 
 [GitHub](https://github.com/)
+
+[Jupyter Notebook](https://jupyter.org/)
 
 [VSCode](https://code.visualstudio.com/)
 
 
 # Installation/ how to run
 
-Clone the repository:
+Clone the repository and select the project folder:
 
 ```
 git clone https://github.com/LDonn32/PDFA.git
 
 ```
 
-# Project overview
+Install the required packages from the requirements.txt file:
 
+
+```
+pip install -r requirements.txt
+```
+
+# Project overview
 
 
 1. I will begin be examining the key wind variables available datasets:
